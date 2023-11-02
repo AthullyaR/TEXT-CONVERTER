@@ -1,15 +1,19 @@
 # TEXT-CONVERTER
 
-##Overview
+## Overview
 Services used in the project:
 
+![services](https://github.com/AthullyaR/TEXT-CONVERTER/assets/78737460/3706f75d-d6aa-4e77-8047-7384f155ab2d)
 
-##Step 1: Create S3 bucket
+## Description
+TEXT-CONVERTER converts the text entered by the user into speech using AWS polly service. On submitting the user input, AWS Lambda function is triggered by the API Endpoint generated using API Gateway. In the AWS Lambda function, code is written to convert text to speech using AWS Polly and store it into Amazon S3 bucket. Later, stored S3 bucket object is retrieved and a presigned url is generated and send as the response.
+
+## Step 1: Create S3 bucket
 - Go tp Amazon S3 in the console.
 - Create the bucket to upload the converted speech.
 ![image](https://github.com/AthullyaR/TEXT-CONVERTER/assets/78737460/8b75fd76-da6f-46fe-affd-6894ea618833)
 
-##Step 2 : Creating AWS Lambda function
+## Step 2 : Creating AWS Lambda function
 - Go to AWS Lambda in the console.
 - Create the Lambda function by specifying name and env.
 - Write the code, save and deploy. Test the function by configuring a test event.
@@ -29,7 +33,7 @@ Services used in the project:
 ![image](https://github.com/AthullyaR/TEXT-CONVERTER/assets/78737460/8b0d40fd-bdc3-4646-a252-227ebf4fdc6e)
 ![image](https://github.com/AthullyaR/TEXT-CONVERTER/assets/78737460/5926fd78-f184-4322-95d9-c186fe769284)
 
-##Step 3: Creating API using API Gateway
+## Step 3: Creating API using API Gateway
 - Go to Amazon API Gateway in the console.
 - Build a REST API, create resource and method by specifying the method type and lambda function.
 - Enable CORS to access from browser (choose the resouce created to view the enable cors option).
@@ -43,7 +47,7 @@ Services used in the project:
 ![image](https://github.com/AthullyaR/TEXT-CONVERTER/assets/78737460/73fa2888-7a0d-48bb-acfb-45d64d7a2d4d)
 ![image](https://github.com/AthullyaR/TEXT-CONVERTER/assets/78737460/c16a89b6-b3c2-4a1a-83b9-a6683ba94a8a)
 
-##Step 4: Deploy using AWS Amplify
+## Step 4: Deploy using AWS Amplify
 - Go to AWS Amplify console and choose host app.
 - Drag and drop the html file and deploy.
 
