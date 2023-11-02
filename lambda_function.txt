@@ -1,0 +1,36 @@
+import json
+import boto3
+import io
+import uuid
+
+polly = boto3.client('polly')
+s3 = boto3.client('s3')
+
+def lambda_handler(event, context):
+    t = event["base"]
+    try:
+        response = polly.synthesize_speech(
+            OutputFormat="mp3",
+            Text=t,
+            VoiceId="Joanna"
+        )
+
+        audio = response['AudioStream'].read()
+
+        # Generate a unique ID to ensure different names for each .mp3 file
+        unique_id = str(uuid.uuid4())
+        file_name = f"output_{unique_id}.mp3"
+
+        s3.upload_fileobj(io.BytesIO(audio), "speechconvert2", file_name)
+        print(f"Audio file {file_name} uploaded to S3 successfully.")
+
+        presigned_url = s3.generate_presigned_url(
+            'get_object',
+            Params={'Bucket': "speechconvert2", 'Key': file_name},
+            ExpiresIn=3600
+        )
+        print(f"Generated URL for the audio file: {presigned_url}")
+        return {"url": presigned_url}
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        return {"error": str(e)}
