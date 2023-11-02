@@ -3,7 +3,7 @@
 ## Overview
 Services used in the project:
 
-![services1](https://github.com/AthullyaR/TEXT-CONVERTER/assets/78737460/7aec6a37-8905-4ac2-817b-a7d8c2c9628f)
+![services1](https://github.com/AthullyaR/TEXT-CONVERTER/assets/78737460/51a61b90-1186-4627-9640-94af85229b0d)
 
 ## Description
 TEXT-CONVERTER converts the text entered by the user into speech using AWS polly service. On submitting the user input, AWS Lambda function is triggered by the API Endpoint generated using API Gateway. In the AWS Lambda function, code is written to convert text to speech using AWS Polly and store it into Amazon S3 bucket. Later, stored S3 bucket object is retrieved and a presigned url is generated and send as the response.
