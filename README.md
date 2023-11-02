@@ -1,10 +1,13 @@
 # TEXT-CONVERTER
 
+##Overview
+Services used in the project:
+
+
 ##Step 1: Create S3 bucket
 - Go tp Amazon S3 in the console.
 - Create the bucket to upload the converted speech.
 ![image](https://github.com/AthullyaR/TEXT-CONVERTER/assets/78737460/8b75fd76-da6f-46fe-affd-6894ea618833)
-
 
 ##Step 2 : Creating AWS Lambda function
 - Go to AWS Lambda in the console.
@@ -14,6 +17,8 @@
 - Add permission to role to perform operations on bucket (inline policy).
 - Inorder to access the object URL in Amazon S3, need to allow public access.
 - Go to permissions and edit the block public access and also add the bucket policy.
+- Use the polly (synthesize_speech) to convert text to speech in the code.
+- Test the Lambda function to see the working.
   
 ![image](https://github.com/AthullyaR/TEXT-CONVERTER/assets/78737460/ff9c56cd-191d-49a2-8758-3ac9f9132cb3)
 ![image](https://github.com/AthullyaR/TEXT-CONVERTER/assets/78737460/9451864a-6605-4259-95e6-d3549cefbcba)
@@ -29,12 +34,24 @@
 - Build a REST API, create resource and method by specifying the method type and lambda function.
 - Enable CORS to access from browser (choose the resouce created to view the enable cors option).
 - Test to see the working and deploy API.
+- Fetch the API endpoint from AWS Lambda console and use it to trigger the AWS Lambda function.
 
 ![image](https://github.com/AthullyaR/TEXT-CONVERTER/assets/78737460/dba1259b-a02e-4834-9623-d7a86e60faae)
 ![image](https://github.com/AthullyaR/TEXT-CONVERTER/assets/78737460/a76c83f6-6c06-4e05-8c84-29f557e7f6b6)
 ![image](https://github.com/AthullyaR/TEXT-CONVERTER/assets/78737460/d8613dc6-5d5b-427e-b96b-2d1ca5be2dd2)
 ![image](https://github.com/AthullyaR/TEXT-CONVERTER/assets/78737460/d648f8df-431c-4a57-8382-b521951dc162)
 ![image](https://github.com/AthullyaR/TEXT-CONVERTER/assets/78737460/73fa2888-7a0d-48bb-acfb-45d64d7a2d4d)
+![image](https://github.com/AthullyaR/TEXT-CONVERTER/assets/78737460/c16a89b6-b3c2-4a1a-83b9-a6683ba94a8a)
+
+##Step 4: Deploy using AWS Amplify
+- Go to AWS Amplify console and choose host app.
+- Drag and drop the html file and deploy.
+
+![image](https://github.com/AthullyaR/TEXT-CONVERTER/assets/78737460/fd5c52a2-026f-4688-8f49-24ae74887831)
+![image](https://github.com/AthullyaR/TEXT-CONVERTER/assets/78737460/15b14634-231f-4952-8506-1c0166c4331f)
+
+
+
 
 
 
