@@ -3,7 +3,8 @@
 ##Step 1: Create S3 bucket
 - Go tp Amazon S3 in the console.
 - Create the bucket to upload the converted speech.
-![image](https://github.com/AthullyaR/TEXT-CONVERTER/assets/78737460/f6702c83-3e47-4da8-b428-b1694587ccba)
+![image](https://github.com/AthullyaR/TEXT-CONVERTER/assets/78737460/8b75fd76-da6f-46fe-affd-6894ea618833)
+
 
 ##Step 2 : Creating AWS Lambda function
 - Go to AWS Lambda in the console.
@@ -25,10 +26,19 @@
 
 ##Step 3: Creating API using API Gateway
 - Go to Amazon API Gateway in the console.
-- Build a REST API and create method.
+- Build a REST API, create resource and method by specifying the method type and lambda function.
+- Enable CORS to access from browser (choose the resouce created to view the enable cors option).
+- Test to see the working and deploy API.
 
 ![image](https://github.com/AthullyaR/TEXT-CONVERTER/assets/78737460/dba1259b-a02e-4834-9623-d7a86e60faae)
-![image](https://github.com/AthullyaR/TEXT-CONVERTER/assets/78737460/5b5ac960-9391-4c66-bd4e-54b4e04c1530)
+![image](https://github.com/AthullyaR/TEXT-CONVERTER/assets/78737460/a76c83f6-6c06-4e05-8c84-29f557e7f6b6)
+![image](https://github.com/AthullyaR/TEXT-CONVERTER/assets/78737460/d8613dc6-5d5b-427e-b96b-2d1ca5be2dd2)
+![image](https://github.com/AthullyaR/TEXT-CONVERTER/assets/78737460/d648f8df-431c-4a57-8382-b521951dc162)
+![image](https://github.com/AthullyaR/TEXT-CONVERTER/assets/78737460/73fa2888-7a0d-48bb-acfb-45d64d7a2d4d)
+
+
+
+
 
 
 
